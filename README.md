@@ -2,6 +2,9 @@
 
 A Streamlit web app for visualizing stock price data, technical indicators, and real-time prices using data from Yahoo Finance.
 
+## Screenshot Of the dashboard
+<img width="1906" height="914" alt="image" src="https://github.com/user-attachments/assets/0afe97c3-5d5f-490e-a2cd-8f985b485b4a" />
+
 ## Features
 
 - **Interactive charting** — view any stock ticker as a candlestick or line chart
