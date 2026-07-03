@@ -19,9 +19,13 @@ def fetch_stock_data(ticker, period, interval):
     if period == '1wk':
         start_date = end_date - timedelta(days=7)
         data = yf.download(ticker, start=start_date, end=end_date, interval=interval)
-        
     else:
         data = yf.download(ticker, period=period, interval=interval)
+
+    # Flatten MultiIndex columns if present (happens even for single tickers in newer yfinance)
+    if isinstance(data.columns, pd.MultiIndex):
+        data.columns = data.columns.get_level_values(0)
+
     return data
 
 ## PROCESS THE DATA
@@ -112,7 +116,7 @@ if st.sidebar.button('Update'):
                       xaxis_title='Time',
                       yaxis_title='Price (USD)',
                       height=600)
-    st.plotly_chart(fig, user_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
     st.subheader('Historical Data')
     st.dataframe(data[['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume' ]])
     
