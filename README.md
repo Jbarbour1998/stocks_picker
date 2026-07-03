@@ -87,6 +87,6 @@ stock_picker/
 - Data is sourced live from Yahoo Finance via the `yfinance` package, so results depend on market data availability and may be delayed.
 - Time data is localized to US/Eastern for consistency.
 
-## License
+## Project Contniuation
 
-Add your preferred license here (e.g., MIT).
+- This project is a carry on in progress for my personal and will continue to be improved and updated 
